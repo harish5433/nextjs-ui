@@ -1,8 +1,23 @@
 @import "tailwindcss";
-
+@custom-variant mobilegroup-hover {
+  &:is(:where(.mobilegroup:hover) &) {
+    @slot;
+  }
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-title-color: #1d2939;
+  --color-text-color: #344054;
+  --color-primary: #465fff;
+  --color-primary-25: #f2f7ff;
+  --color-primary-50: #ecf3ff;
+  --color-primary-200: #c2d6ff;
+  --color-stroke: #e4e7ec;
+  --color-stroke-secondary: #f2f4f7;
+  --color-stroke-tertiary: #d0d5dd;
+  --color-text-color-secondary: #667085;
+  --color-text-color-tertiary: #98a2b3;
 }
 
 @theme inline {
@@ -10,6 +25,54 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-primary-25: var(--color-primary-25);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-200: var(--color-primary-200);
+  --color-title-color: var(--color-title-color);
+  --color-text-color: var(--color-text-color);
+  --color-stroke: var(--color-stroke);
+  --color-stroke-secondary: var(--color-stroke-secondary);
+  --color-stroke-tertiary: var(--color-stroke-tertiary);
+  --color-text-color-secondary: var(--color-text-color-secondary);
+  --color-text-color-tertiary: var(--color-text-color-tertiary);
+
+  --shadow-feature: inset 0 4px 34px 26px #fcfcfc;
+
+  --background-image-core-feature: linear-gradient(180deg,
+      rgba(242, 244, 247, 0) 53.55%,
+      #F2F4F7 101.85%);
+
+  --animate-menu-in: menu-in 300ms ease-out;
+  --animate-menu-up: menu-up 200ms ease-in;
+
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform:
+        /* translateX(100) */
+        rotateX(-20deg) scale(0.98);
+    }
+
+    to {
+      opacity: 1;
+      transform:
+        /* translateX(0) */
+        rotateX(0deg) scale(1);
+    }
+  }
+
+  @keyframes menu-up {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +85,10 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .app-container {
+    @apply mx-auto px-4 md:px-6 lg:px-8 xl:px-12 max-w-7xl;
+  }
 }
