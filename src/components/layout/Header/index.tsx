@@ -10,12 +10,12 @@ const Header = () => {
                 <div className="invisible hidden h-0 w-full items-center justify-between lg:w-9/12 xl:visible xl:flex xl:h-auto 2xl:w-10/12">
                     <nav>
                         <ul className="flex flex-col gap-5 xl:flex-row xl:items-center 2xl:gap-8">
-                            <li className="group py-7"><a href="/" className="font-medium text-text-color group-hover:text-primary">Components</a></li>
-                            <li className="group py-7"><a href="/" className="font-medium text-text-color group-hover:text-primary">Download</a></li>
-                            <li className="relative mobilegroup py-7"><button className="font-medium text-text-color mobilegroup-hover:text-primary inline-flex items-center gap-1.5">Products <span className='transition-transform duration-200 xl:mobilegroup-hover:rotate-180'><ChevronDown /></span></button>
+                            <li className="group py-4"><a href="/" className="font-medium text-text-color group-hover:text-primary">Components</a></li>
+                            <li className="group py-4"><a href="/" className="font-medium text-text-color group-hover:text-primary">Download</a></li>
+                            <li className="relative mobilegroup py-4"><button className="font-medium text-text-color mobilegroup-hover:text-primary inline-flex items-center gap-1.5">Products <span className='transition-transform duration-200 xl:mobilegroup-hover:rotate-180'><ChevronDown /></span></button>
                                 <ProductsMenu />
                             </li>
-                            <li className="relative mobilegroup py-7"><button className="font-medium text-text-color mobilegroup-hover:text-primary inline-flex items-center gap-1.5">Resources <span className='transition-transform duration-200 xl:mobilegroup-hover:rotate-180'><ChevronDown /></span></button>
+                            <li className="relative mobilegroup py-4"><button className="font-medium text-text-color mobilegroup-hover:text-primary inline-flex items-center gap-1.5">Resources <span className='transition-transform duration-200 xl:mobilegroup-hover:rotate-180'><ChevronDown /></span></button>
                                 <ResourceMenu />
                             </li>
                         </ul>
