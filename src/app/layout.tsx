@@ -24,10 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${outfit.className} antialiased flex flex-col min-h-screen justify-between`}
+        className={`${outfit.variable} ${outfit.className} antialiased flex flex-col min-h-screen`}
       >
+        <Header />
         <div className="flex-1">
-          <Header />
           <main>
             {children}
           </main>

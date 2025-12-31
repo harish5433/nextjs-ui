@@ -23,7 +23,7 @@ const HeroSection = () => {
         <section className='px-4 sm:px-8 xl:px-12.5'>
             <div className='relative z-10 overflow-hidden rounded-3xl bg-gray-50 pt-12 md:pt-14 lg:pt-20 flex flex-col justify-center items-center text-center'>
                 <div className='mb-4.5 rounded-[30px] bg-primary-50 px-4 py-2 text-sm font-medium text-primary flex max-md:flex-col justify-center items-center gap-3'>
-                   <Contact size={20}/> Industry-leading Tailwind CSS Dashboard Kit with Multi-Framework Support
+                    <Contact size={20} /> Industry-leading Tailwind CSS Dashboard Kit with Multi-Framework Support
                 </div>
                 <MainHeading title="Open-Source Tailwind CSS Admin Dashboard Template" />
                 <p className="mx-auto mb-9 w-full max-w-272.5 text-text-color-secondary">TailAdmin is a Tailwind CSS-based Admin Dashboard Template that provides developers with everything they need to create feature-rich back-ends, dashboards, and admin panels for web projects. Empowering developers with essential UI components, elements, and pages required to build a complete Dashboard or Admin panel – Now available for HTML, React, Next.js, Vue, Angular and Laravel!</p>

@@ -20,7 +20,7 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="mt-7 flex items-center gap-3 xl:mt-0">
+                    <div className="py-3 flex items-center gap-3 xl:mt-0">
                         <Link className="flex items-center gap-1.25 rounded-full bg-gray-100 p-2 h-8 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700" href="https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template" target="_blank" rel="noopener noreferrer">
                             <GithubSvg />
                             <span className="text-sm font-medium text-text-color">1.8K</span>

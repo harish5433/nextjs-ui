@@ -13,6 +13,7 @@ const IMAGE_KEYS = {
   saas: "/images/home/marketing.webp",
   marketing: "/images/home/saas.webp",
   stocks: "/images/home/stocks.webp",
+  joinImage: "/images/home/join-image.webp",
   crm: "/images/home/crm.webp",
   Marqee: ["/images/home/marqee/accenture.svg","/images/home/marqee/alibaba.svg","/images/home/marqee/cognitiveai.svg","/images/home/marqee/dolby.svg","/images/home/marqee/eplaneai.svg","/images/home/marqee/flormar.svg","/images/home/marqee/lqpay.svg","/images/home/marqee/nvidia.svg","/images/home/marqee/pexels.svg","/images/home/marqee/virtualpay.svg"],
   Tools:["/images/home/tools/apexchart.webp","/images/home/tools/jsvector.svg","/images/home/tools/flatpickr.webp","/images/home/tools/swiper.svg","/images/home/tools/alpine.svg","/images/home/tools/prettier.svg"]
