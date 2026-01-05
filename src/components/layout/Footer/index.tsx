@@ -47,17 +47,17 @@ const Footer = () => {
                             <h4 className="mb-7 text-xl font-medium text-white">About</h4>
                             <ul className="flex flex-col gap-3">
                                 <li>
-                                    <Link href="/" className="text-base font-medium text-[#98A2B3] duration-200 hover:text-white hover:underline">
+                                    <Link href="/privacy-policy" className="text-base font-medium text-[#98A2B3] duration-200 hover:text-white hover:underline">
                                         Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/" className="text-base font-medium text-[#98A2B3] duration-200 hover:text-white hover:underline">
+                                    <Link href="/refund-policy" className="text-base font-medium text-[#98A2B3] duration-200 hover:text-white hover:underline">
                                         Refund Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/" className="text-base font-medium text-[#98A2B3] duration-200 hover:text-white hover:underline">
+                                    <Link href="/license" className="text-base font-medium text-[#98A2B3] duration-200 hover:text-white hover:underline">
                                         License and Terms
                                     </Link>
                                 </li>

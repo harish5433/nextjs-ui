@@ -1,6 +1,10 @@
+"use client";
 import { HomeTitle, SmallTitle } from '../Component/HomeTitle'
 import Image from 'next/image';
 import IMAGE_KEYS from '@/assets/imgconst';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import { gsap, ScrollTrigger } from '@/libs/gsap';
 
 interface IFeature {
     title: string;
@@ -46,21 +50,65 @@ const featuresData: IFeature[] = [
         ]
     }
 ]
-
 const NotableFeature = () => {
+    const headingRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    useGSAP(
+        () => {
+            if (!headingRef.current || !sectionRef.current) return;
+            const mm = gsap.matchMedia();
+            mm.add("(min-width: 1024px)", () => {
+                ScrollTrigger.create({
+                    trigger: sectionRef.current!,
+                    start: "top-=80 top",
+                    end: "bottom bottom",
+                    pin: headingRef.current!,
+                    pinSpacing: false,
+                });
+                const cards = gsap.utils.toArray<HTMLElement>(".card-wrapper");
+                const lastCardST = ScrollTrigger.create({
+                    trigger: cards[cards.length - 1],
+                    start: "bottom bottom",
+                });
+
+                const headingHeight = headingRef.current!.getBoundingClientRect().height || 0;
+                cards.forEach((card, index) => {
+                    gsap.set(card, {
+                        x: index * 4,
+                        y: index * 4,
+                        zIndex: cards.length + index,
+                    });
+
+                    ScrollTrigger.create({
+                        trigger: card,
+                        start: `top top+=${80 + headingHeight + 20 + index * 4}px`,
+                        end: () => lastCardST.start,
+                        pin: true,
+                        pinSpacing: false
+                    });
+                });
+                return () => {
+                    ScrollTrigger.getAll().forEach(st => st.kill());
+                };
+            });
+        },
+        { scope: sectionRef }
+    );
     return (
         <section className='relative z-10 bg-white py-16 md:py-24 lg:py-30'>
-            <div className='app-container'>
-                <div className='mx-auto mb-12 w-full max-w-117.5 text-center lg:mb-15'>
-                    <SmallTitle title="Other Notable Features" />
-                    <HomeTitle title="Build Admin Panel Effortlessly" />
+            <div ref={sectionRef}>
+                <div className='app-container'>
+                    <div className='mx-auto mb-12 w-full max-w-117.5 text-center lg:mb-15' ref={headingRef}>
+                        <SmallTitle title="Other Notable Features" />
+                        <HomeTitle title="Build Admin Panel Effortlessly" />
+                    </div>
                 </div>
-            </div>
-            <div className='app-container'>
-                <div className='mx-auto flex flex-col w-full max-w-292.5 gap-y-16 md:gap-y-24 lg:gap-y-32 lg:[&>div:nth-child(even)>div:nth-child(2)]:order-first'>
-                    {featuresData?.map((feature) => (
-                        <FeatureCard key={feature.title} feature={feature} />
-                    ))}
+                <div className='app-container'>
+                    <div className='mx-auto flex flex-col w-full max-w-292.5 gap-y-16 md:gap-y-24 lg:gap-y-32 lg:[&>div:nth-child(even)>div:nth-child(2)]:order-first'>
+                        {featuresData?.map((feature) => (
+                            <FeatureCard key={feature.title} feature={feature} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
@@ -70,7 +118,7 @@ const NotableFeature = () => {
 const FeatureCard = ({ feature }: { feature: IFeature }) => {
     const { title, subTitle, image, features } = feature;
     return (
-        <div className='flex items-center justify-between gap-15 max-lg:flex-col max-lg:gap-y-10 xl:gap-24'>
+        <div className='card-wrapper p-3 flex items-center justify-between gap-15 max-lg:flex-col max-lg:gap-y-10 xl:gap-24 border-2 border-gray-300 shadow-feature bg-white rounded-3xl'>
             <div className='w-full'>
                 <h3 className='mb-4.5 text-lg font-medium text-primary'>{title}</h3>
                 <h4 className='text-2xl font-semibold text-title-color xl:text-4xl'>{subTitle}</h4>
@@ -85,7 +133,7 @@ const FeatureCard = ({ feature }: { feature: IFeature }) => {
             </div>
             <div className='block w-full'>
                 <div className='relative aspect-570/408 max-w-142.5 overflow-hidden rounded-3xl border border-gray-100 shadow-feature bg-[#fcfcfc] lg:ml-auto'>
-                    <Image src={image} alt={feature.title} width={570} height={408} className='object-cover'/>
+                    <Image src={image} alt={feature.title} width={570} height={408} className='object-cover' />
                 </div>
             </div>
         </div>

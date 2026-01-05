@@ -1,9 +1,11 @@
 @import "tailwindcss";
+
 @custom-variant mobilegroup-hover {
   &:is(:where(.mobilegroup:hover) &) {
     @slot;
   }
 }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,15 +15,17 @@
   --color-primary-25: #f2f7ff;
   --color-primary-50: #ecf3ff;
   --color-primary-200: #c2d6ff;
+  --color-primary-600: #3641f5;
   --color-stroke: #e4e7ec;
   --color-stroke-secondary: #f2f4f7;
   --color-stroke-tertiary: #d0d5dd;
   --color-text-color-secondary: #667085;
   --color-text-color-tertiary: #98a2b3;
+  --default-border:#e4e7ec;
 }
 
 @theme inline {
-  --breakpoint-xs:425px;
+  --breakpoint-xs: 425px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -30,6 +34,7 @@
   --color-primary-25: var(--color-primary-25);
   --color-primary-50: var(--color-primary-50);
   --color-primary-200: var(--color-primary-200);
+  --color-primary-600: var(--color-primary-600);
   --color-title-color: var(--color-title-color);
   --color-text-color: var(--color-text-color);
   --color-stroke: var(--color-stroke);
@@ -52,7 +57,7 @@
       opacity: 0;
       transform:
         /* translateX(100) */
-        rotateX(-20deg) scale(0.98);
+        rotateX(-10deg) scale(0.98);
     }
 
     to {
@@ -87,9 +92,77 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--default-border, currentColor);
+  }
 
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+@utility no-scrollbar {
+
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-200 rounded-full dark:bg-gray-700;
+  }
+}
 @layer utilities {
   .app-container {
     @apply mx-auto px-4 md:px-6 lg:px-8 xl:px-12 max-w-7xl;
+  }
+
+  .blog-details {
+    @apply text-base text-[#676d7f];
+
+    & h1 {
+      @apply mb-11.5 text-4xl font-semibold leading-11;
+    }
+
+    & h2 {
+      @apply mb-4 scroll-mt-40 text-2xl font-semibold text-title-color;
+    }
+
+    & h3 {
+      @apply mb-4 scroll-mt-40 text-2xl font-semibold text-title-color;
+    }
+
+    & p {
+      @apply mb-4 text-base font-medium text-[#676d7f];
+    }
+
+    & ul {
+      @apply my-5 list-disc marker:text-[#d1d5db] px-6.5
+    }
+
+    & li {
+      @apply my-2 px-1.5
+    }
   }
 }

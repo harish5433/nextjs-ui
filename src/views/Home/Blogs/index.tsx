@@ -23,18 +23,18 @@ const Blogs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5">
           {blogData.map((ele) => (
             <div key={ele.title} className="flex flex-col rounded-3xl border border-stroke bg-white p-2">
-              <Link href="/" aria-label="blog detail" className="relative block aspect-443/224 overflow-hidden rounded-2xl">
+              <Link href="/blog/laravel-dashboard-templates" aria-label="blog detail" className="relative block aspect-443/224 overflow-hidden rounded-2xl">
                 <Image src={ele.image} fill loading="lazy" decoding="async" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw,443px" alt="" />
               </Link>
               <div className="flex-1 p-5">
                 <div className="mb-4 inline-flex gap-2 text-sm font-medium text-text-color-tertiary">
-                  <Calendar size={16}/><span>{ele.date}</span>
+                  <Calendar size={16}/><time>{ele.date}</time>
                 </div>
-                <h3><Link href="/" aria-label="blog detail" className="mb-2 line-clamp-2 text-xl font-semibold text-title-color duration-200 hover:text-primary">{ele.title}</Link></h3>
+                <h3><Link href="/blog/laravel-dashboard-templates" aria-label="blog detail" className="mb-2 line-clamp-2 text-xl font-semibold text-title-color duration-200 hover:text-primary">{ele.title}</Link></h3>
                 <p className="mb-5 line-clamp-4 text-base text-text-color-secondary">{ele.des}</p>
               </div>
               <div className="pb-5 px-5">
-                <Link href="/" aria-label="blog detail" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white duration-200 hover:bg-primary-600">
+                <Link href="/blog/laravel-dashboard-templates" aria-label="blog detail" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white duration-200 hover:bg-primary-600">
                   Read more
                   <ArrowRight className="size-5" />
                 </Link>
