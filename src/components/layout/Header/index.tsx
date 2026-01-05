@@ -135,8 +135,13 @@ const MobileMenuBar = ({ mobileBar }: { mobileBar: boolean }) => {
                                     <ChevronDown />
                                 </span>
                             </button>
-                            {open === "products" && <div className="grid" style={{ gridTemplateRows: open === "products" ? "1fr" : "0fr", transition: "grid-template-rows 300ms" }}>
-                                <div className='overflow-hidden transition-all duration-300'><div className='mt-2 rounded-lg border border-stroke p-3'><ProductMenuInner /></div></div></div>}
+                            <div className="grid" style={{ gridTemplateRows: open === "products" ? "1fr" : "0fr", transition: "grid-template-rows 300ms" }}>
+                                <div className='overflow-hidden transition-all duration-300'>
+                                    <div className='mt-2 rounded-lg border border-stroke p-3'>
+                                        <ProductMenuInner />
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li className="relative mobilegroup">
                             <button onClick={() => toggleMenu("resources")} className="flex w-full items-center justify-between gap-2 border-b border-stroke p-3 text-base text-text-color duration-200 hover:text-primary">
