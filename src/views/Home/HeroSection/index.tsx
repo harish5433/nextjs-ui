@@ -43,15 +43,15 @@ const HeroSection = () => {
                     <Link href="/" className="inline-flex items-center justify-center gap-2 rounded-lg border border-stroke-tertiary bg-white px-6 py-3 text-base font-medium text-text-color shadow-xs duration-200 hover:bg-gray-50 hover:text-gray-800 max-xs:w-full">Live Preview</Link>
                 </div>
                 <div className="mt-15 relative mx-auto w-full max-w-186.25 max-lg:px-10">
-                    <div className="mx-auto relative overflow-hidden rounded-t-xl border-8 border-white bg-white shadow-[0px_0px_0px_1px_#E4E7EC,0px_18.824px_100px_0px_rgba(16,24,40,0.12)]">
+                    <div className="mx-auto relative aspect-1604/686 overflow-hidden rounded-t-xl border-8 border-white bg-white shadow-[0px_0px_0px_1px_#E4E7EC,0px_18.824px_100px_0px_rgba(16,24,40,0.12)]">
                         <Image
                             src={IMAGE_KEYS.HeroImg}
                             alt="Hero Image"
-                            width={1004}
-                            height={686}
+                            fill
                             priority
                             fetchPriority="high"
-                            className="w-full h-auto object-cover"
+                            sizes="(max-width:1024px) 100vw, 745px"
+                            className="object-cover"
                         />
                     </div>
                 </div>

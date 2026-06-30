@@ -60,7 +60,7 @@ const Header = () => {
                                 <span className="text-sm font-medium text-text-color">1.8K</span>
                             </Link>
                             <Link href="/" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white duration-200 max-xl:h-13 max-xl:w-full max-xl:rounded-full">Get Pro</Link>
-                            <Link className="inline-flex items-center justify-center gap-2 rounded-lg border border-stroke-tertiary bg-white px-4 py-3 text-sm font-medium text-text-color shadow-xs duration-200 hover:bg-gray-50 hover:text-gray-800 max-xl:h-13 max-xl:w-full max-xl:rounded-full" href="/">Login</Link>
+                            <Link className="inline-flex items-center justify-center gap-2 rounded-lg border border-stroke-tertiary bg-white px-4 py-3 text-sm font-medium text-text-color shadow-xs duration-200 hover:bg-gray-50 hover:text-gray-800 max-xl:h-13 max-xl:w-full max-xl:rounded-full" href="/login">Login</Link>
                         </div>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ const MobileMenuBar = ({ mobileBar }: { mobileBar: boolean }) => {
                 <div className='w-full bg-white p-5'>
                     <div className='grid gap-3 sm:grid-cols-2'>
                         <Link href="/" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white duration-200 max-xl:h-13 max-xl:w-full max-xl:rounded-full">Get Pro</Link>
-                        <Link className="inline-flex items-center justify-center gap-2 rounded-lg border border-stroke-tertiary bg-white px-4 py-3 text-sm font-medium text-text-color shadow-xs duration-200 hover:bg-gray-50 hover:text-gray-800 max-xl:h-13 max-xl:w-full max-xl:rounded-full" href="/">Login</Link>
+                        <Link className="inline-flex items-center justify-center gap-2 rounded-lg border border-stroke-tertiary bg-white px-4 py-3 text-sm font-medium text-text-color shadow-xs duration-200 hover:bg-gray-50 hover:text-gray-800 max-xl:h-13 max-xl:w-full max-xl:rounded-full" href="/login">Login</Link>
                     </div>
                 </div>
             </div>

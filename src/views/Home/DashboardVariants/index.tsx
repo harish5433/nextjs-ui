@@ -29,7 +29,7 @@ const DashboardVariants = () => {
                         <div key={ele.title} className='mobilegroup relative rounded-3xl border border-stroke-secondary bg-white p-2 pb-4 text-center md:p-4 md:pb-6'>
                             <div className='relative overflow-hidden rounded-xl'>
                                 <div className='relative aspect-530/330 w-full border border-stroke-secondary rounded-xl overflow-hidden'>
-                                    <Image src={ele.image} fill priority={false} className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 530px" alt={ele.title} />
+                                    <Image src={ele.image} fill  className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 530px" alt={ele.title} />
                                 </div>
                                 <div className='invisible absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-xl border border-stroke-secondary bg-[rgba(152,162,179,0.32)] opacity-0 backdrop-blur-xs duration-200 mobilegroup-hover:visible mobilegroup-hover:opacity-100'>
                                     <Link href={ele.link} className='inline-flex items-center justify-center gap-1 rounded-lg bg-primary px-10 py-3.5 text-sm font-medium text-white duration-200 hover:bg-primary-600'>Preview <ArrowUpRight size={16} /></Link>

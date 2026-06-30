@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+// @ts-ignore: CSS side-effect import without type declarations
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -30,15 +31,13 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${outfit.className} antialiased flex flex-col min-h-screen`}
       >
-        <NextTopLoader color="#465fff" height={3} zIndex={9999} easing="ease-in-out" speed={200} showSpinner={true}/>
+        <NextTopLoader color="#465fff" height={3} zIndex={9999} easing="ease-in-out" speed={200} showSpinner={false} />
         <Header />
-        <div className="flex-1">
-          <main>
-            {children}
-          </main>
-        </div>
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer />
-       <ScrollToTop />
+        <ScrollToTop />
       </body>
     </html>
   );

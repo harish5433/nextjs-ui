@@ -18,7 +18,7 @@ const JoinBox = () => {
                         </div>
                     </div>
                     <div className='relative max-w-3xl self-end rounded-t-xl lg:ml-auto'>
-                        <Image src={IMAGE_KEYS.joinImage} width={1356} height={870} alt="join-image" className='h-full' />
+                        <Image src={IMAGE_KEYS.joinImage} width={1356} height={870} alt="join-image" sizes="(max-width:640px) 100vw, (max-width:1024px) 80vw, 768px" className="w-full h-auto" />
                     </div>
                 </div>
             </div>

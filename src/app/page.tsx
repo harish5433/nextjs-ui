@@ -1,12 +1,15 @@
-import Blogs from "@/views/Home/Blogs";
+import dynamic from "next/dynamic";
+import { Metadata } from "next";
+
 import HeroSection from "@/views/Home/HeroSection";
 import CustomerInfo from "@/views/Home/CustomerInfo";
 import CoreFeature from "@/views/Home/CoreFeature";
-import NotableFeature from "@/views/Home/NotableFeature";
-import DashboardVariants from "@/views/Home/DashboardVariants";
-import PowerfullToolkits from "@/views/Home/PowerfullToolkits";
-import JoinBox from "@/views/Home/JoinBox";
-import { Metadata } from "next";
+
+const NotableFeature = dynamic(() => import("@/views/Home/NotableFeature"));
+const DashboardVariants = dynamic(() => import("@/views/Home/DashboardVariants"));
+const PowerfullToolkits = dynamic(() => import("@/views/Home/PowerfullToolkits"));
+const JoinBox = dynamic(() => import("@/views/Home/JoinBox"));
+const Blogs = dynamic(() => import("@/views/Home/Blogs"));
 
 export const metadata: Metadata = {
   title: "Free Tailwind CSS Admin Dashboard Template - TailAdmin",

@@ -8,12 +8,12 @@ const Footer = () => {
             <div className="app-container">
                 <div className="flex gap-10 max-xl:flex-wrap lg:justify-between">
                     <div className="max-w-sm">
-                        <Link href="/" aria-label='home' className="mb-6 inline-block"><Logo className="text-white!" /></Link>
+                        <Link href="/" aria-label='tailadmin logo' className="mb-6 inline-block"><Logo className="text-white!" /></Link>
                         <p className="mb-10 text-base text-[#98A2B3]">Free and Open-Source Tailwind CSS Admin Dashboard Template, now available for - HTML, React, Next.js, Vue Angular and Laravel</p>
                         <div className="flex gap-1.5">
-                            <Link href="/" className="inline-flex items-center justify-center rounded-full bg-white/5 px-5 py-2.5 text-[#98A2B3] duration-200 hover:bg-white/15 hover:text-white"><Boxes size={20} /></Link>
-                            <Link href="/" className="inline-flex items-center justify-center rounded-full bg-white/5 px-5 py-2.5 text-[#98A2B3] duration-200 hover:bg-white/15 hover:text-white"><Boxes size={20} /></Link>
-                            <Link href="/" className="inline-flex items-center justify-center rounded-full bg-white/5 px-5 py-2.5 text-[#98A2B3] duration-200 hover:bg-white/15 hover:text-white"><Boxes size={20} /></Link>
+                            <Link href="/" aria-label="Discord" className="inline-flex items-center justify-center rounded-full bg-white/5 px-5 py-2.5 text-[#98A2B3] duration-200 hover:bg-white/15 hover:text-white"><Boxes size={20} /></Link>
+                            <Link href="/" aria-label="Twitter" className="inline-flex items-center justify-center rounded-full bg-white/5 px-5 py-2.5 text-[#98A2B3] duration-200 hover:bg-white/15 hover:text-white"><Boxes size={20} /></Link>
+                            <Link href="/" aria-label="Github" className="inline-flex items-center justify-center rounded-full bg-white/5 px-5 py-2.5 text-[#98A2B3] duration-200 hover:bg-white/15 hover:text-white"><Boxes size={20} /></Link>
                         </div>
                     </div>
                     <div className="w-full sm:w-auto">

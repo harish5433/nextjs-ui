@@ -2,7 +2,7 @@
 import { HomeTitle, SmallTitle } from '../Component/HomeTitle'
 import Image from 'next/image';
 import IMAGE_KEYS from '@/assets/imgconst';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap, ScrollTrigger } from '@/libs/gsap';
 
@@ -53,8 +53,31 @@ const featuresData: IFeature[] = [
 const NotableFeature = () => {
     const headingRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
+    const [enableAnimation, setEnableAnimation] = useState(false);
+
+    useEffect(() => {
+        if (!sectionRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setEnableAnimation(true);
+                    observer.disconnect();
+                }
+            },
+            {
+                rootMargin: "300px",
+            }
+        );
+
+        observer.observe(sectionRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
     useGSAP(
         () => {
+            if (!enableAnimation) return;
             if (!headingRef.current || !sectionRef.current) return;
             const mm = gsap.matchMedia();
             mm.add("(min-width: 1024px)", () => {
@@ -92,7 +115,10 @@ const NotableFeature = () => {
                 };
             });
         },
-        { scope: sectionRef }
+        {
+            scope: sectionRef,
+            dependencies: [enableAnimation],
+        }
     );
     return (
         <section className='relative z-10 bg-white py-16 md:py-24 lg:py-30'>
@@ -133,7 +159,7 @@ const FeatureCard = ({ feature }: { feature: IFeature }) => {
             </div>
             <div className='block w-full'>
                 <div className='relative aspect-570/408 max-w-142.5 overflow-hidden rounded-3xl border border-gray-100 shadow-feature bg-[#fcfcfc] lg:ml-auto'>
-                    <Image src={image} alt={feature.title} width={570} height={408} className='object-cover' />
+                    <Image src={image} alt={feature.title} width={570} height={408} className='object-cover' sizes="(max-width:768px) 100vw,(max-width:1024px) 50vw, 570px" />
                 </div>
             </div>
         </div>
